@@ -42,7 +42,7 @@ If you have questions concerning this license or the applicable additional terms
 #include <stddef.h>					// for offsetof
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include </usr/include/math.h>
 #include <string.h>
 
 // RB: added <stdint.h> for missing uintptr_t
@@ -62,7 +62,7 @@ If you have questions concerning this license or the applicable additional terms
 #include <signal.h>
 // RB end
 // Yamagi begin
-#elif defined(__FreeBSD__)
+#elif defined(__FreeBSD__) || defined(__APPLE__)
 #include <signal.h>
 #endif
 // Yamagi end

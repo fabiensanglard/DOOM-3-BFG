@@ -109,10 +109,16 @@ If you have questions concerning this license or the applicable additional terms
 
 #include <windows.h>						// for qgl.h
 
-#elif defined(__linux__) || defined(__FreeBSD__)
+#elif defined(__linux__) || defined(__FreeBSD__) || defined(__APPLE__)
 
 #include <signal.h>
+
 #include <pthread.h>
+
+#if defined(__APPLE__)
+   
+    #define pthread_yield pthread_yield_np
+#endif
 
 #endif // #if defined(_WIN32)
 // RB end
@@ -143,7 +149,7 @@ If you have questions concerning this license or the applicable additional terms
 #include <ctype.h>
 #include <typeinfo>
 #include <errno.h>
-#include <math.h>
+#include "/usr/include/math.h"
 #include <limits.h>
 #include <memory>
 // RB: added <stdint.h> for missing uintptr_t with MinGW

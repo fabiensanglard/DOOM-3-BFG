@@ -32,9 +32,11 @@ If you have questions concerning this license or the applicable additional terms
 #ifndef __QGL_H__
 #define __QGL_H__
 
-
-#include <GL/gl.h>
-
+#if defined(__APPLE__)
+    #include <OpenGL/gl3.h>
+#else
+    #include <GL/gl.h>
+#endif
 
 #ifndef APIENTRY
 #define APIENTRY
@@ -46,9 +48,7 @@ If you have questions concerning this license or the applicable additional terms
 // only use local glext.h if we are not using the system one already
 // http://oss.sgi.com/projects/ogl-sample/ABI/
 #ifndef GL_GLEXT_VERSION
-
-#include "glext.h"
-
+    #include "glext.h"
 #endif
 
 typedef void ( *GLExtension_t )( void );

@@ -27,3 +27,6 @@ base/sound/
 base/strings/
 base/video/
 base/wads/
+
+xcuserdata
+.DS_Store
